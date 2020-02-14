@@ -1,10 +1,8 @@
 package hw01;
-
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hw1 {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
         System.out.println("Let the game begin!");
         Scanner scanner=new Scanner(System.in);
@@ -13,12 +11,13 @@ public class Hw1 {
         System.out.println("Enter a number:");
 
         int num=scanner.nextInt();
-        int[] arr = new int[30];
+        int[] arr = new int[1];
 
         for(int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 100 + 1);
         }
 
+      while (true) {
         for (int el: arr) {
             if(el>num) {
                 System.out.println("Your number is too small. Please, try again.");
@@ -31,8 +30,9 @@ public class Hw1 {
                 System.out.println(e);
             }
         }
-
-        String str = Arrays.toString(arr);
-        System.out.println(str);
+        num=scanner.nextInt();
+        }
     }
 }
+
+
