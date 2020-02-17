@@ -49,8 +49,8 @@ public class Hw3 {
             case "SATURDAY":
                 System.out.println("Your tasks for "+ schedule[6][0]+": "+ schedule[6][1]);
                 break;
-            case "exit":
-                break;
+            case "EXIT":
+                return;
             default:
                 System.out.println("Sorry, I don't understand you, please try again.");
                 i=scanner.nextLine();
