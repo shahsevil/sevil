@@ -48,7 +48,7 @@ public class Pet {
     }
 
     public String toString(){
-        return String.format("%s{nickname='%s',age=%d,trick level=%d,habits=["+habits(habits)+"]}}",species,nickname,age,tricklevel);
+        return String.format("Pet=%s{nickname='%s',age=%d,trick level=%d,habits=["+habits(habits)+"]}}",species,nickname,age,tricklevel);
     }
 
 }

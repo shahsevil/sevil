@@ -2,11 +2,9 @@ package hw04;
 
 public class Main {
     public static void main(String[] args){
-     familyList1();
-     familyList2();
+        familyList1();
+        familyList2();
     }
-
-
 
     public static void familyList1() {
         Human father = new Human("Vito", "Karleone", 1990);
@@ -15,13 +13,14 @@ public class Main {
         Human child = new Human("Michael", "Karleone", 1977, 90, pet, mother, father, new int[7][3]);
 
         child.describePet();
-        System.out.println("");
+        System.out.println();
         child.greetpet();
-        System.out.println("");
-        pet.eat();
+        System.out.println();
         pet.respond();
+        pet.eat();
         pet.foul();
         System.out.println(pet.toString());
+        System.out.print("");
         System.out.println(child.toString());
     }
 
@@ -32,11 +31,14 @@ public class Main {
         Human child = new Human("Jack", "Garfield", 6, 95, pet, mother, father, new int[7][3]);
 
         child.describePet();
+        System.out.println();
         child.greetpet();
-        pet.eat();
+        System.out.println();
         pet.respond();
+        pet.eat();
         pet.foul();
         System.out.println(pet.toString());
+        System.out.print("");
         System.out.println(child.toString());
     }
 }

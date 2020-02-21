@@ -1,4 +1,4 @@
-package hw05;
+package hw07;
 
 
 public class Human {
