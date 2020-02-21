@@ -15,6 +15,7 @@ public class Pet {
         this.trickLevel = trickLevel;
         this.habits = habits;
     }
+    //
 
     public String getSpecies() {
         return species;
