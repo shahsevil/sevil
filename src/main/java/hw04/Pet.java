@@ -2,8 +2,10 @@ package hw04;
 
 public class Pet {
 
-    String species, nickname;
-    int age, tricklevel;
+    String species;
+    String nickname;
+    int age;
+    int tricklevel;
     String[] habits;
 
     public Pet(String species, String nickname){
@@ -20,6 +22,7 @@ public class Pet {
     }
 
     public Pet(){
+
     }
 
     String tricklevel(int tricklevel){

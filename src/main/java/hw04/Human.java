@@ -2,10 +2,13 @@ package hw04;
 
 public class Human {
 
-    String name, surname;
-    int year,iq;
+    String name;
+    String surname;
+    int year;
+    int iq;
     Pet pet;
-    Human mother, father;
+    Human mother;
+    Human father;
     int[][] schedule;
 
     public Human(String name, String surname, int year){
