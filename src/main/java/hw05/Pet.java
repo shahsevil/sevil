@@ -4,9 +4,20 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Pet {
-    private String species, nickname;
-    private int age, trickLevel;
+    private String species;
+    private String nickname;
+    private int age;
+    private int trickLevel;
     private String[] habits;
+
+    static
+    {
+        System.out.println("a new class is being loaded");
+    }
+
+    {
+        System.out.println("a new object is created");
+    }
 
     public Pet(String species, String nickname, int age, int trickLevel,String[] habits) {
         this.species = species;
@@ -15,7 +26,6 @@ public class Pet {
         this.trickLevel = trickLevel;
         this.habits = habits;
     }
-    //
 
     public String getSpecies() {
         return species;
@@ -33,15 +43,9 @@ public class Pet {
         this.nickname = nickname;
     }
 
-    void eat(){
-        System.out.println("I am eating.");
-    }
-    void respond(){
-        System.out.printf("Hello, owner. I am %s. I miss you!\n",this.nickname);
-    }
-    void foul(){
-        System.out.println("I need to cover it up.\n");
-    }
+//    void eat(){ System.out.println("I am eating."); }
+//    void respond(){System.out.printf("Hello, owner. I am %s. I miss you!\n",this.nickname);}
+//    void foul(){System.out.println("I need to cover it up.\n");}
 
 
     String tricklevel(int tricklevel){
@@ -53,7 +57,7 @@ public class Pet {
 
     String habits(String [] habits){
         String str="";
-        for(String el:habits) str+=el;
+        for(String el:habits) str=str+el;
         return str;
     }
 
