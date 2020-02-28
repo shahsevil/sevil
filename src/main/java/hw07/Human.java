@@ -67,7 +67,7 @@ public class Human {
 
     @Override
     public String toString() {
-//        return String.format("Human{name=%s, surname=%s, year=%d, iq=%d, mother=%s %s,"+"father=%s %s}",name,surname,year,iq, family.getFather().getName(),
+        return String.format("Human{name=%s, surname=%s, year=%d, iq=%d, mother=%s %s,"+"father=%s %s}",name,surname,year,iq, family.getFather().getName(),
                 family.getFather().getSurname(), family.getMother().getName(),family.getMother().getSurname());
     }
 
