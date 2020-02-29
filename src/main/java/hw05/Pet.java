@@ -15,10 +15,6 @@ public class Pet {
         System.out.println("a new class is being loaded");
     }
 
-    {
-        System.out.println("a new object is created");
-    }
-
     public Pet(String species, String nickname, int age, int trickLevel,String[] habits) {
         this.species = species;
         this.nickname = nickname;
@@ -42,25 +38,6 @@ public class Pet {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
-//    void eat(){ System.out.println("I am eating."); }
-//    void respond(){System.out.printf("Hello, owner. I am %s. I miss you!\n",this.nickname);}
-//    void foul(){System.out.println("I need to cover it up.\n");}
-
-
-    String tricklevel(int tricklevel){
-        String sly="";
-        if (tricklevel>50 && tricklevel<=100) sly="very sly";
-        else if (tricklevel>0 && tricklevel<=50) sly="is not very sly";
-        return sly;
-    }
-
-    String habits(String [] habits){
-        String str="";
-        for(String el:habits) str=str+el;
-        return str;
-    }
-
 
     public int getAge() {
         return age;

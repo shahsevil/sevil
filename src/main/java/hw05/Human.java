@@ -10,14 +10,23 @@ public class Human {
     private int year;
     private int iq;
     private String[][] schedule;
+    private Family family;
 
     static
     {
         System.out.println("a new class is being loaded");
     }
 
-    {
-        System.out.println("a new object is created");
+    public Human(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public Human() {
+    }
+
+    public Family getFamily() {
+        return family;
     }
 
     public Human(String name, String surname, int year, int iq, String [][] schedule) {
@@ -60,13 +69,18 @@ public class Human {
         this.iq = iq;
     }
 
-    public String[][] getSchedule() {
-        return schedule;
+    public String getSchedule() {
+        return Arrays.deepToString(schedule);
     }
 
     public void setSchedule(String [][] schedule) {
         this.schedule = schedule;
     }
+
+    public void setFamily(Family family) {
+        this.family = family;
+    }
+
 
     @Override
     public boolean equals(Object o) {
@@ -90,6 +104,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return String.format("Human{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n schedule=%s}", name, surname, year, iq, Arrays.deepToString(schedule));
+        return String.format("Human{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n schedule=%s}",
+                name, surname, year, iq, Arrays.deepToString(schedule));
     }
 }

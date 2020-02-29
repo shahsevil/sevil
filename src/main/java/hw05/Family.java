@@ -1,27 +1,31 @@
 package hw05;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class Family {
-    private int countFamily=2;
    private Human mother;
    private Human father;
    private Pet pet;
-   private ArrayList<Human> children = new ArrayList<>();
+   private Human []childrenArr;
+   private int num=0;
 
     static
     {
         System.out.println("a new class is being loaded");
     }
 
-    {
-        System.out.println("a new object is created");
-    }
-
     public Family(Human mother, Human father, Pet pet) {
         this.mother = mother;
         this.father = father;
         this.pet = pet;
+    }
+
+    public Family() {
+    }
+
+    public Family(Human[] childrenArr) {
+        this.childrenArr = childrenArr;
     }
 
     public Human getMother() {
@@ -48,36 +52,71 @@ public class Family {
         this.pet = pet;
     }
 
-    public void   addChild(Human child){
-            children.add(child);
-            countFamily++;
-     //   System.out.println("====== add child");
+    public Human[] getChildren() {
+        return childrenArr;
     }
 
-    public boolean deleteChild(int listIndex) {
-        if(children.size()==0) return false;
+    public void setChildren(Human[] children) {
+        this.childrenArr = childrenArr;
+    }
+
+    public void addChild(Human child) {
+        Human[]newArray = new Human[num + 1];
+        for (int i = 0; i < num; i++){
+            newArray[i] = childrenArr[i];
+        }
+        newArray[num++]=child;
+        child.setFamily(this);
+        childrenArr=newArray;
+    }
+
+    String[] childrenArray(){
+        String[] arr = new String[num];
+        for(int i=0;i<num;i++)
+            arr[i]=childrenArr[i].getName()+" "+childrenArr[i].getSurname()+" "+childrenArr[i].getYear()+" "+childrenArr[i].getIq()+" "+childrenArr[i].getSchedule();
+        return arr;
+    }
+
+    public boolean deleteChild(int index) {
+        if (index < 0 || index >= childrenArr.length) {
+            return false;
+        }
         else {
-            children.remove(listIndex);
-            countFamily--;
+            for (int i=index+1;i<num;i++){
+                childrenArr[i-1]=childrenArr[i];
+            }
+            num--;
             return true;
         }
     }
 
-    public int familyNum() {
-        return countFamily;
+    public int countFamily(){
+        return num+2;
     }
 
-//    void greetpet(){
-//        System.out.printf("Hello, %s!", pet.getNickname());
-//    }
-//
-//    void describePet(){
-//        System.out.printf("I have a %s, he is %d years old", pet.getSpecies(), pet.getAge());
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Family family = (Family) o;
+        if (o.hashCode() != this.hashCode()) return false;
+        return num == family.num &&
+                Objects.equals(mother, family.mother) &&
+                Objects.equals(father, family.father) &&
+                Objects.equals(pet, family.pet) &&
+                Arrays.equals(childrenArr, family.childrenArr);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(mother, father, pet, num);
+        result = 31 * result + Arrays.hashCode(childrenArr);
+        return result;
+    }
 
     @Override
     public String toString() {
-        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n countFamily=%d,\n children=%s}",
-                                    mother, father, pet, countFamily,  children);
+        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",
+                                    mother, father, pet, Arrays.toString(childrenArray()),countFamily());
     }
 }
