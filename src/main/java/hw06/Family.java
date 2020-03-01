@@ -71,24 +71,22 @@ public class Family {
         childrenArr=newArray;
     }
 
-    String[] childrenArray(){
-        String[] arr = new String[num];
-        for(int i=0;i<num;i++)
-            arr[i]=childrenArr[i].getName()+" "+childrenArr[i].getSurname()+" "+childrenArr[i].getYear()+" "+childrenArr[i].getIq()+" "+childrenArr[i].getSchedule();
-        return arr;
-    }
-
     public boolean deleteChild(int index) {
-        if (index < 0 || index >= childrenArr.length) {
-            return false;
-        }
-        else {
-            for (int i=index+1;i<num;i++){
-                childrenArr[i-1]=childrenArr[i];
+        if (index>=0 && index<childrenArr.length) {
+            Human[] childrenArr2 = Arrays.copyOf(childrenArr,childrenArr.length - 1);
+            for (int i=0, j=0;i<childrenArr.length;i++) {
+                if(i==index) {
+                    continue;
+                    }
+                    childrenArr2[j++]=childrenArr[i];
+                }
+                num--;
+                childrenArr=childrenArr2;
+                return true;
             }
-            num--;
-            return true;
-        }
+        else {
+            return false;
+            }
     }
 
     public int countFamily(){
@@ -116,9 +114,14 @@ public class Family {
     }
 
     @Override
-    public String toString() {
-        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",
-                mother, father, pet, Arrays.toString(childrenArray()),countFamily());
+    protected void finalize() throws Throwable {
+        System.out.println("Family deleted");
+        super.finalize();
     }
 
+    @Override
+    public String toString() {
+        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",
+                mother, father, pet, Arrays.toString(childrenArr),countFamily());
+    }
 }

@@ -22,19 +22,15 @@ public class Human {
         this.surname = surname;
     }
 
-    public Human() {
-    }
-
-    public Family getFamily() {
-        return family;
-    }
-
     public Human(String name, String surname, int year, int iq, String [][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
         this.schedule = schedule;
+    }
+
+    public Human() {
     }
 
     public String getName() {
@@ -76,11 +72,12 @@ public class Human {
     public void setSchedule(String [][] schedule) {
         this.schedule = schedule;
     }
-
+    public Family getFamily() {
+        return family;
+    }
     public void setFamily(Family family) {
         this.family = family;
     }
-
 
     @Override
     public boolean equals(Object o) {
@@ -103,14 +100,14 @@ public class Human {
     }
 
     @Override
-    public String toString() {
-        return String.format("Human{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n schedule=%s}",
-                name, surname, year, iq, Arrays.deepToString(schedule));
+    protected void finalize() throws Throwable {
+        System.out.println("Human deleted");
+        super.finalize();
     }
 
     @Override
-    protected void finalize() throws Throwable {
-        System.out.println("********DELETED*******");
-        super.finalize();
+    public String toString() {
+        return String.format("\nHuman{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n schedule=%s}",
+                name, surname, year, iq, Arrays.deepToString(schedule));
     }
 }

@@ -16,7 +16,10 @@ public class Pet {
         System.out.println("a new class is being loaded");
     }
 
-    public Pet(Species species, String nickname, int age, int trickLevel,String[] habits) {
+    public Pet() {
+    }
+
+    public Pet(Species species, String nickname, int age, int trickLevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -64,13 +67,6 @@ public class Pet {
         this.habits = habits;
     }
 
-
-    public String toString(){
-        String s = String.format("%s{nickname='%s', age=%d, trickLevel=%d, habits=%s}",
-                species,nickname,age,trickLevel, Arrays.toString(habits));
-        return s;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -90,4 +86,14 @@ public class Pet {
         return result;
     }
 
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Pet deleted");
+        super.finalize();
+    }
+
+    public String toString(){
+        return String.format("%s{nickname='%s', age=%d, trickLevel=%d, habits=%s}",
+                species,nickname,age,trickLevel, Arrays.toString(habits));
+    }
 }
