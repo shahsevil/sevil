@@ -3,25 +3,22 @@ package hw07;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Pet {
-    private String species, nickname;
-    private int age, trickLevel;
+public abstract class Pet {
+    private String nickname;
+    private int age;
+    private int trickLevel;
     private String[] habits;
 
-    public Pet(String species, String nickname, int age, int trickLevel,String[] habits) {
-        this.species = species;
+    static
+    {
+        System.out.println("a new class is being loaded");
+    }
+
+    public Pet(String nickname, int age, int trickLevel, String[] habits) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
         this.habits = habits;
-    }
-
-    public String getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(String species) {
-        this.species = species;
     }
 
     public String getNickname() {
@@ -31,31 +28,6 @@ public class Pet {
     public void setNickname(String nickname) {
         this.nickname = nickname;
     }
-
-    void eat(){
-        System.out.println("I am eating.");
-    }
-    void respond(){
-        System.out.printf("Hello, owner. I am %s. I miss you!\n",this.nickname);
-    }
-    void foul(){
-        System.out.println("I need to cover it up.\n");
-    }
-
-
-    String tricklevel(int tricklevel){
-        String sly="";
-        if (tricklevel>50 && tricklevel<=100) sly="very sly";
-        else if (tricklevel>0 && tricklevel<=50) sly="is not very sly";
-        return sly;
-    }
-
-    String habits(String [] habits){
-        String str="";
-        for(String el:habits) str+=el;
-        return str;
-    }
-
 
     public int getAge() {
         return age;
@@ -81,10 +53,15 @@ public class Pet {
         this.habits = habits;
     }
 
+    void eat(){
+        System.out.println("I am eating");
+    }
+
+    abstract void respond();
+
 
     public String toString(){
-        String s = String.format("%s{nickname='%s', age=%d, trickLevel=%d, habits=%s}",
-                species,nickname,age,trickLevel, Arrays.toString(habits));
+        String s = String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}",nickname,age,trickLevel, Arrays.toString(habits));
         return s;
     }
 
@@ -95,15 +72,15 @@ public class Pet {
         Pet pet = (Pet) o;
         return age == pet.age &&
                 trickLevel == pet.trickLevel &&
-                Objects.equals(species, pet.species) &&
                 Objects.equals(nickname, pet.nickname) &&
                 Arrays.equals(habits, pet.habits);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(species, nickname, age, trickLevel);
+        int result = Objects.hash(nickname, age, trickLevel);
         result = 31 * result + Arrays.hashCode(habits);
         return result;
     }
+
 }
