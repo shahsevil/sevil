@@ -112,10 +112,4 @@ public class Human {
         return String.format("Human{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n schedule=%s}",
                 name, surname, year, iq, Arrays.deepToString(schedule));
     }
-
-    @Override
-    protected void finalize() throws Throwable {
-        System.out.println("********DELETED*******");
-        super.finalize();
-    }
 }

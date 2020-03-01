@@ -59,12 +59,6 @@ public abstract class Pet {
 
     abstract void respond();
 
-
-    public String toString(){
-        String s = String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}",nickname,age,trickLevel, Arrays.toString(habits));
-        return s;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -83,4 +77,7 @@ public abstract class Pet {
         return result;
     }
 
+    public String toString(){
+        return String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}",nickname,age,trickLevel, Arrays.toString(habits));
+    }
 }
