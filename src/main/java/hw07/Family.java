@@ -114,8 +114,7 @@ public class Family {
 
     @Override
     public String toString() {
-        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",
-                mother, father, pet, Arrays.toString(childrenArr),countFamily());
+        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",mother, father, pet, Arrays.toString(childrenArr),countFamily());
     }
 
 }

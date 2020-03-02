@@ -2,16 +2,17 @@ package hw07;
 
 import static hw07.Species.FISH;
 
-public class Fish extends Pet implements IFoul {
+public class Fish extends Pet {
     private String species;
     public Fish(String nickname, int age, int trickLevel, String[] habits) {
         super(nickname, age, trickLevel, habits);
-        this.species=FISH.getString();
+        this.species=FISH.name();
     }
 
     @Override
-    public void foul() {
-        System.out.println("Foul method of Fish:)");
+    void foul() {
+        System.out.println("Foul method of fish");
+        super.foul();
     }
 
     @Override

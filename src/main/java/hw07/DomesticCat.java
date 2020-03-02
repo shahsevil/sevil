@@ -2,17 +2,18 @@ package hw07;
 
 import static hw07.Species.DOMESTICCAT;
 
-public class DomesticCat extends Pet implements IFoul {
+public class DomesticCat extends Pet{
     private String species;
 
     public DomesticCat(String nickname, int age, int trickLevel, String[] habits) {
         super(nickname, age, trickLevel, habits);
-        this.species=DOMESTICCAT.getString();
+        this.species=DOMESTICCAT.name();
     }
 
     @Override
-    public void foul() {
-        System.out.println("Foul method of DomesticCat:)");
+    void foul() {
+        System.out.println("Foul method of domesticcat");
+        super.foul();
     }
 
     @Override

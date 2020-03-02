@@ -59,6 +59,10 @@ public abstract class Pet {
 
     abstract void respond();
 
+    void foul(){
+        System.out.println("I am eating");
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
