@@ -60,7 +60,7 @@ public abstract class Pet {
     abstract void respond();
 
     void foul(){
-        System.out.println("I am eating");
+        System.out.println("foul");
     }
 
     @Override
