@@ -71,23 +71,16 @@ public class Family {
         childrenArr=newArray;
     }
 
-    public boolean deleteChild(int index) {
-        if (index>=0 && index<childrenArr.length) {
+    public boolean deleteChild(Human child) {
+            if(num<0) return false;
             Human[] childrenArr2 = Arrays.copyOf(childrenArr,childrenArr.length - 1);
-            for (int i=0, j=0;i<childrenArr.length;i++) {
-                if(i==index) {
-                    continue;
-                    }
+            for (int i=0, j=0;i<childrenArr2.length;i++) {
                     childrenArr2[j++]=childrenArr[i];
                 }
                 num--;
                 childrenArr=childrenArr2;
                 return true;
             }
-        else {
-            return false;
-            }
-    }
 
     public int countFamily(){
         return num+2;
