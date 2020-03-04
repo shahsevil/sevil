@@ -7,10 +7,10 @@ public class Main {
 
         Man father=new Man("Vito", "Karleone", 1991, 1, new String[][]{{SUNDAY.name(), "dcab"}, {MONDAY.name(), "bcda"}});
         Woman mother= new Woman("Jane", "Karleone", 1992, 1, new String[][]{{TUESDAY.name(), "abcd"}, {WEDNESDAY.name(), "bcda"}});
-        Dog myDog= new Dog("Oscar", 3,20, new String[]{"eat", "drink", "sleep"});
-        DomesticCat myDomesticCat=new DomesticCat("Lucy",4,60, new String[]{"eat", "drink", "sleep"});
-        Fish myFish=new Fish("Bob",1,10, new String[]{"eat", "drink", "sleep"});
-        RoboCat myRoboCat=new RoboCat("Sam",5,48, new String[]{"eat", "drink", "sleep"});
+        Dog myDog= new Dog("Oscar", 3,20, new String[]{"eat", "drink", "sleep"},Species.DOG);
+        DomesticCat myDomesticCat=new DomesticCat("Lucy",4,60, new String[]{"eat", "drink", "sleep"},Species.DOMESTICCAT);
+        Fish myFish=new Fish("Bob",1,10, new String[]{"eat", "drink", "sleep"},Species.FISH);
+        RoboCat myRoboCat=new RoboCat("Sam",5,48, new String[]{"eat", "drink", "sleep"},Species.ROBOCAT);
         Family family=new Family(mother,father);
         Human child1 = new Human("Michael", "Karleone", 2000, 20, new String[][]{{TUESDAY.name(), "abcd"}, {WEDNESDAY.name(), "bcda"}});
 
@@ -46,8 +46,8 @@ public class Main {
 
         System.out.println("----------------");
 
-        mother.MakeUp();
-        father.RepairCar();
+        mother.makeUp();
+        father.repairCar();
         System.out.println("---------------");
 
         myDog.foul();
@@ -70,16 +70,8 @@ public class Main {
         myRoboCat.eat();
         System.out.println("-------------------");
 
-        mother.greetPet(myDog);
-        mother.greetPet(myDomesticCat);
-        mother.greetPet(myFish);
-        mother.greetPet(myRoboCat);
-        System.out.println("----------------");
-
-        father.greetPet(myDog);
-        father.greetPet(myDomesticCat);
-        father.greetPet(myFish);
-        father.greetPet(myRoboCat);
+        mother.greetPet();
+        father.greetPet();
         System.out.println("----------------");
     }
 }

@@ -1,18 +1,14 @@
 package hw07;
 
-import static hw07.Species.ROBOCAT;
-
 public class RoboCat extends Pet {
-    private String species;
-    public RoboCat(String nickname, int age, int trickLevel, String[] habits) {
-        super(nickname, age, trickLevel, habits);
-        this.species=ROBOCAT.name();
+
+    public RoboCat(String nickname, int age, int trickLevel, String[] habits,Species species) {
+        super(nickname, age, trickLevel, habits,species);
     }
 
     @Override
     void foul() {
         System.out.println("Foul method of robocat");
-        super.foul();
     }
 
     @Override

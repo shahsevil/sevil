@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public abstract class Pet {
+    protected Species species;
     private String nickname;
     private int age;
     private int trickLevel;
@@ -14,11 +15,12 @@ public abstract class Pet {
         System.out.println("a new class is being loaded");
     }
 
-    public Pet(String nickname, int age, int trickLevel, String[] habits) {
+    public Pet(String nickname, int age, int trickLevel, String[] habits,Species species) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
         this.habits = habits;
+        this.species=species;
     }
 
     public String getNickname() {

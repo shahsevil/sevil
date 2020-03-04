@@ -1,19 +1,14 @@
 package hw07;
 
-import static hw07.Species.DOG;
-
 public class Dog extends Pet{
-    private String species;
 
-    public Dog(String nickname, int age, int trickLevel, String[] habits) {
-        super(nickname, age, trickLevel, habits);
-        this.species=DOG.name();
+    public Dog(String nickname, int age, int trickLevel, String[] habits,Species species) {
+        super(nickname, age, trickLevel, habits,species);
     }
 
     @Override
     void foul() {
         System.out.println("Foul method of dog");
-        super.foul();
     }
 
     @Override

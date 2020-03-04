@@ -81,9 +81,8 @@ public class Human {
         this.family = family;
     }
 
-    void greetPet(Pet pet) {
-        pet = family.getPet();
-        System.out.printf("Hello, %s!\n", pet.getNickname());
+    void greetPet() {
+        System.out.println("greetPet");
     }
 
 
