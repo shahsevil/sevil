@@ -57,14 +57,8 @@ public class Main {
 
         System.out.println("----------------");
 
-        father.greetPet(myDog);
-        father.greetPet(myDomesticCat);
-        father.greetPet(myFish);
-        father.greetPet(myRoboCat);
-        System.out.println("-----------------");
-
-        mother.MakeUp();
-        father.RepairCar();
+        mother.makeUp();
+        father.repairCar();
         System.out.println("---------------");
 
         myDog.foul();

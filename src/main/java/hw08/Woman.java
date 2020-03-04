@@ -8,7 +8,7 @@ public class Woman extends Human {
         super(name, surname, year, iq,schedule);
     }
 
-    void MakeUp(){
+    void makeUp(){
         System.out.println("MakeUp is unique method of Woman class:)");
     }
 

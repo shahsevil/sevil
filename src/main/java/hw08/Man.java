@@ -8,7 +8,7 @@ public class Man extends Human {
         super(name, surname, year, iq,schedule);
     }
 
-    void RepairCar(){
+    void repairCar(){
         System.out.println("RepairCar is unique method of Man class:)");
     }
 

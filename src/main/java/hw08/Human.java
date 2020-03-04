@@ -1,9 +1,7 @@
 package hw08;
 
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Set;
 
 public class Human {
 
@@ -18,11 +16,6 @@ public class Human {
     {
         System.out.println("a new class is being loaded");
     }
-
-//    public Human(String name, String surname) {
-//        this.name = name;
-//        this.surname = surname;
-//    }
 
     public Human(String name, String surname, int year, int iq, Map<DayOfWeek,String > schedule) {
         this.name = name;
