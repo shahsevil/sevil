@@ -8,11 +8,10 @@ public class Family {
     private Human mother;
     private Human father;
     private Pet pet;
-    private Human[]childrenArr;
-    private int num=0;
+    private Human[] childrenArr;
+    private int num = 0;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
@@ -62,28 +61,48 @@ public class Family {
     }
 
     public void addChild(Human child) {
-        Human[]newArray = new Human[num + 1];
-        for (int i = 0; i < num; i++){
+        Human[] newArray = new Human[num + 1];
+        for (int i = 0; i < num; i++) {
             newArray[i] = childrenArr[i];
         }
-        newArray[num++]=child;
+        newArray[num++] = child;
         child.setFamily(this);
-        childrenArr=newArray;
+        childrenArr = newArray;
+    }
+
+    public boolean deleteChild(int index) {
+        if (index >= 0 && index < childrenArr.length) {
+            Human[] childrenArr2 = Arrays.copyOf(childrenArr, childrenArr.length - 1);
+            for (int i = 0, j = 0; i < childrenArr.length; i++) {
+                if (i == index) {
+                    continue;
+                }
+                childrenArr2[j++] = childrenArr[i];
+            }
+            num--;
+            childrenArr = childrenArr2;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean deleteChild(Human child) {
-            if(num<0) return false;
-            Human[] childrenArr2 = Arrays.copyOf(childrenArr,childrenArr.length - 1);
-            for (int i=0, j=0;i<childrenArr2.length;i++) {
-                    childrenArr2[j++]=childrenArr[i];
-                }
-                num--;
-                childrenArr=childrenArr2;
-                return true;
+        try {
+            Human[] childrenArr2 = Arrays.copyOf(childrenArr, childrenArr.length - 1);
+            for (int i = 0, j = 0; i < childrenArr2.length; i++) {
+                childrenArr2[j++] = childrenArr[i];
             }
+            num--;
+            childrenArr = childrenArr2;
+            return true;
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            return false;
+        }
+    }
 
-    public int countFamily(){
-        return num+2;
+    public int countFamily() {
+        return num + 2;
     }
 
     @Override
@@ -115,6 +134,6 @@ public class Family {
     @Override
     public String toString() {
         return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",
-                mother, father, pet, Arrays.toString(childrenArr),countFamily());
+                mother, father, pet, Arrays.toString(childrenArr), countFamily());
     }
 }

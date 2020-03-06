@@ -11,8 +11,7 @@ public class Pet {
     private int trickLevel;
     private String[] habits;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
@@ -92,8 +91,8 @@ public class Pet {
         super.finalize();
     }
 
-    public String toString(){
+    public String toString() {
         return String.format("%s{nickname='%s', age=%d, trickLevel=%d, habits=%s}",
-                species,nickname,age,trickLevel, Arrays.toString(habits));
+                species, nickname, age, trickLevel, Arrays.toString(habits));
     }
 }

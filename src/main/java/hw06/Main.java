@@ -9,7 +9,7 @@ public class Main {
         Human mother = new Human("Jane", "Karleone", 1992, 1, new String[][]{{DayOfWeek.TUESDAY.name(), "abcd"}, {DayOfWeek.WEDNESDAY.name(), "bcda"}});
         Family family = new Family(mother, father, pet);
         child[0] = new Human("Michael", "Karleone", 2000, 20, new String[][]{{DayOfWeek.TUESDAY.name(), "abcd"}, {DayOfWeek.WEDNESDAY.name(), "bcda"}});
-        child[1] = new Human("Kate","Karleone",2005,30,new String[][]{{DayOfWeek.THURSDAY.name(),"cbda"},{DayOfWeek.FRIDAY.name(),"bdac"}});
+        child[1] = new Human("Kate", "Karleone", 2005, 30, new String[][]{{DayOfWeek.THURSDAY.name(), "cbda"}, {DayOfWeek.FRIDAY.name(), "bdac"}});
 
         System.out.println("---Family---");
         System.out.println(family);
@@ -22,8 +22,8 @@ public class Main {
         System.out.println();
 
         System.out.println("---After deleting---");
+        family.deleteChild(1);
         family.deleteChild(child[0]);
-        family.deleteChild(child[1]);
         System.out.println(family);
         System.out.println();
 

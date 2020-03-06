@@ -12,8 +12,7 @@ public class Human {
     private String[][] schedule;
     private Family family;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
@@ -22,7 +21,7 @@ public class Human {
         this.surname = surname;
     }
 
-    public Human(String name, String surname, int year, int iq, String [][] schedule) {
+    public Human(String name, String surname, int year, int iq, String[][] schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
@@ -69,12 +68,14 @@ public class Human {
         return Arrays.deepToString(schedule);
     }
 
-    public void setSchedule(String [][] schedule) {
+    public void setSchedule(String[][] schedule) {
         this.schedule = schedule;
     }
+
     public Family getFamily() {
         return family;
     }
+
     public void setFamily(Family family) {
         this.family = family;
     }
