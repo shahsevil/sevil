@@ -2,8 +2,9 @@ package hw07;
 
 public class RoboCat extends Pet {
 
-    public RoboCat(String nickname, int age, int trickLevel, String[] habits,Species species) {
-        super(nickname, age, trickLevel, habits,species);
+    public RoboCat(String nickname, int age, int trickLevel, String[] habits) {
+        super(nickname, age, trickLevel, habits);
+        this.species = species.ROBOCAT;
     }
 
     @Override
@@ -13,6 +14,6 @@ public class RoboCat extends Pet {
 
     @Override
     void respond() {
-        System.out.printf("Hello owner! I am %s. I miss you!",super.getNickname());
+        System.out.printf("Hello owner! I am %s. I miss you!", super.getNickname());
     }
 }

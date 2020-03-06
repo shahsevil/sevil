@@ -10,17 +10,15 @@ public abstract class Pet {
     private int trickLevel;
     private String[] habits;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
-    public Pet(String nickname, int age, int trickLevel, String[] habits,Species species) {
+    public Pet(String nickname, int age, int trickLevel, String[] habits) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
         this.habits = habits;
-        this.species=species;
     }
 
     public String getNickname() {
@@ -55,13 +53,13 @@ public abstract class Pet {
         this.habits = habits;
     }
 
-    void eat(){
+    void eat() {
         System.out.println("I am eating");
     }
 
     abstract void respond();
 
-    void foul(){
+    void foul() {
         System.out.println("foul");
     }
 
@@ -83,7 +81,7 @@ public abstract class Pet {
         return result;
     }
 
-    public String toString(){
-        return String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}",nickname,age,trickLevel, Arrays.toString(habits));
+    public String toString() {
+        return String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}", nickname, age, trickLevel, Arrays.toString(habits));
     }
 }

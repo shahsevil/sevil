@@ -1,9 +1,10 @@
 package hw07;
 
-public class DomesticCat extends Pet{
+public class DomesticCat extends Pet {
 
-    public DomesticCat(String nickname, int age, int trickLevel, String[] habits,Species species) {
-        super(nickname, age, trickLevel, habits,species);
+    public DomesticCat(String nickname, int age, int trickLevel, String[] habits) {
+        super(nickname, age, trickLevel, habits);
+        this.species = species.DOMESTICCAT;
     }
 
     @Override
@@ -13,6 +14,6 @@ public class DomesticCat extends Pet{
 
     @Override
     void respond() {
-        System.out.printf("Hello owner! I am %s. I miss you!",super.getNickname());
+        System.out.printf("Hello owner! I am %s. I miss you!", super.getNickname());
     }
 }

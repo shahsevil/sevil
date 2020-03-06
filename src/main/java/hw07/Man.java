@@ -1,12 +1,12 @@
 package hw07;
 
-public class Man extends Human {
+public final class Man extends Human {
 
     public Man(String name, String surname, int year, int iq, String[][] schedule) {
         super(name, surname, year, iq, schedule);
     }
 
-    void repairCar(){
+    void repairCar() {
         System.out.println("RepairCar is unique method of Man class:)");
     }
 
