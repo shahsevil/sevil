@@ -2,13 +2,13 @@ package hw08;
 
 import java.util.Map;
 
-public class Woman extends Human {
+public final class Woman extends Human {
 
     public Woman(String name, String surname, int year, int iq, Map<DayOfWeek, String> schedule) {
-        super(name, surname, year, iq,schedule);
+        super(name, surname, year, iq, schedule);
     }
 
-    void makeUp(){
+    void makeUp() {
         System.out.println("MakeUp is unique method of Woman class:)");
     }
 

@@ -5,21 +5,21 @@ import java.util.Set;
 
 public abstract class Pet {
 
+    protected Species species;
     private String nickname;
     private int age;
     private int trickLevel;
     private Set<String> habits;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
-    public Pet(String nickname, int age, int trickLevel,Set<String> habits) {
+    public Pet(String nickname, int age, int trickLevel, Set<String> habits) {
         this.nickname = nickname;
         this.age = age;
         this.trickLevel = trickLevel;
-        this.habits=habits;
+        this.habits = habits;
     }
 
 
@@ -56,12 +56,13 @@ public abstract class Pet {
     }
 
 
-    void eat(){
+    void eat() {
         System.out.println("I am eating");
     }
 
     abstract void respond();
-    void foul(){
+
+    void foul() {
         System.out.println("foul");
     }
 
@@ -81,7 +82,7 @@ public abstract class Pet {
         return Objects.hash(nickname, age, trickLevel, habits);
     }
 
-    public String toString(){
-        return String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}",nickname,age,trickLevel, habits);
+    public String toString() {
+        return String.format("{nickname='%s', age=%d, trickLevel=%d, habits=%s}", nickname, age, trickLevel, habits);
     }
 }

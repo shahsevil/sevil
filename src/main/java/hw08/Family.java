@@ -6,11 +6,10 @@ public class Family {
     private Human mother;
     private Human father;
     private Set<Pet> petSet;
-    private List<Human> childrenList=new ArrayList<>();
-    private int num=0;
+    private List<Human> childrenList = new ArrayList<>();
+    private int num = 0;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
@@ -42,7 +41,7 @@ public class Family {
         return petSet;
     }
 
-    public void setPet(Pet pet) {
+    public void setPet(Set<Pet> petSet) {
         this.petSet = petSet;
     }
 
@@ -54,7 +53,7 @@ public class Family {
         this.childrenList = childrenList;
     }
 
-    public List<Human> addChild(Human child){
+    public List<Human> addChild(Human child) {
         childrenList.add(child);
         num++;
         return childrenList;
@@ -62,15 +61,15 @@ public class Family {
 
     public boolean deleteChild(int index) {
         if (childrenList.size() == 0 || index > childrenList.size()) return false;
-        else{
+        else {
             childrenList.remove(index);
             num--;
             return true;
         }
     }
 
-    public int countFamily(){
-        return num+2;
+    public int countFamily() {
+        return num + 2;
     }
 
     @Override
@@ -92,7 +91,7 @@ public class Family {
 
     @Override
     public String toString() {
-        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}",mother, father, petSet, childrenList,countFamily());
+        return String.format("Family{mother=%s,\n father=%s,\n pet=%s,\n children=%s\n countFam:%d}", mother, father, petSet, childrenList, countFamily());
     }
 
 }

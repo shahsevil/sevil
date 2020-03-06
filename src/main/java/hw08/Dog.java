@@ -2,14 +2,11 @@ package hw08;
 
 import java.util.Set;
 
-import static hw08.Species.DOG;
-
 public class Dog extends Pet {
-    private String species;
 
     public Dog(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
-        this.species = DOG.name();
+        this.species = species.DOG;
     }
 
     @Override

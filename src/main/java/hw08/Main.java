@@ -7,23 +7,23 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
 
-        Map<DayOfWeek,String > mySchedule1 = new HashMap<>();
-        mySchedule1.put(DayOfWeek.MONDAY,"aabcd");
+        Map<DayOfWeek, String> mySchedule1 = new HashMap<>();
+        mySchedule1.put(DayOfWeek.MONDAY, "aabcd");
 
-        Map<DayOfWeek,String > mySchedule2 = new HashMap<>();
-        mySchedule2.put(DayOfWeek.FRIDAY,"aabcd");
+        Map<DayOfWeek, String> mySchedule2 = new HashMap<>();
+        mySchedule2.put(DayOfWeek.FRIDAY, "aabcd");
 
-        Map<DayOfWeek,String > mySchedule3 = new HashMap<>();
-        mySchedule3.put(DayOfWeek.THURSDAY,"aabcd");
+        Map<DayOfWeek, String> mySchedule3 = new HashMap<>();
+        mySchedule3.put(DayOfWeek.THURSDAY, "aabcd");
 
-        Man father=new Man("Vito", "Karleone", 1991, 1,mySchedule1);
-        Woman mother= new Woman("Jane", "Karleone", 1992, 1,mySchedule2);
-        Dog myDog= new Dog("Oscar", 3,20, Collections.singleton("eat,drink,sleep"));
-        DomesticCat myDomesticCat=new DomesticCat("Lucy",4,60, Collections.singleton("eat,sleep,drink"));
-        Fish myFish=new Fish("Bob",1,10, Collections.singleton("drink,sleep,eat"));
-        RoboCat myRoboCat=new RoboCat("Sam",5,48, Collections.singleton("sleep,eat,drink"));
-        Family family=new Family(mother,father);
-        Human child1 = new Human("Michael", "Karleone", 2000, 20,mySchedule3);
+        Man father = new Man("Vito", "Karleone", 1991, 1, mySchedule1);
+        Woman mother = new Woman("Jane", "Karleone", 1992, 1, mySchedule2);
+        Dog myDog = new Dog("Oscar", 3, 20, Collections.singleton("eat,drink,sleep"));
+        DomesticCat myDomesticCat = new DomesticCat("Lucy", 4, 60, Collections.singleton("eat,sleep,drink"));
+        Fish myFish = new Fish("Bob", 1, 10, Collections.singleton("drink,sleep,eat"));
+        RoboCat myRoboCat = new RoboCat("Sam", 5, 48, Collections.singleton("sleep,eat,drink"));
+        Family family = new Family(mother, father);
+        Human child1 = new Human("Michael", "Karleone", 2000, 20, mySchedule3);
 
         System.out.println("----------------");
         System.out.println("Family without adding:");
@@ -40,19 +40,19 @@ public class Main {
         System.out.println(family);
 
         System.out.println("----------------");
-        family.setPet(myDog);
+        family.setPet(Collections.singleton(myDog));
         System.out.println(family);
 
         System.out.println("----------------");
-        family.setPet(myDomesticCat);
+        family.setPet(Collections.singleton(myDomesticCat));
         System.out.println(family);
 
         System.out.println("----------------");
-        family.setPet(myFish);
+        family.setPet(Collections.singleton(myFish));
         System.out.println(family);
 
         System.out.println("----------------");
-        family.setPet(myRoboCat);
+        family.setPet(Collections.singleton(myRoboCat));
         System.out.println(family);
 
         System.out.println("----------------");
@@ -83,7 +83,6 @@ public class Main {
         mother.greetPet(myFish);
         mother.greetPet(myRoboCat);
         System.out.println("----------------");
-
 
         father.greetPet(myDog);
         father.greetPet(myDomesticCat);
