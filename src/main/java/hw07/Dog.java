@@ -7,7 +7,6 @@ public class Dog extends Pet {
         this.species = Species.DOG;
     }
 
-
     @Override
     void foul() {
         System.out.println("Foul method of dog");
