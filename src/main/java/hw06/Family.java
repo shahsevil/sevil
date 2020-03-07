@@ -106,6 +106,7 @@ public class Family {
                     count++;
                 }
             }
+            num--;
             childrenArr = result;
         }
         return resultBool;
