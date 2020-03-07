@@ -129,6 +129,7 @@ public class Family {
                 Arrays.equals(childrenArr, family.childrenArr);
     }
 
+
     @Override
     public int hashCode() {
         int result = Objects.hash(mother, father, pet, num);
