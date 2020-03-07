@@ -2,9 +2,9 @@ package hw07;
 
 public class Fish extends Pet {
 
-    public Fish(String nickname, int age, int trickLevel, String[] habits, Species species) {
+    public Fish(String nickname, int age, int trickLevel, String[] habits) {
         super(nickname, age, trickLevel, habits);
-        this.species = species.FISH;
+        this.species = Species.FISH;
     }
 
     @Override

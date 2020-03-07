@@ -4,7 +4,7 @@ public class RoboCat extends Pet {
 
     public RoboCat(String nickname, int age, int trickLevel, String[] habits) {
         super(nickname, age, trickLevel, habits);
-        this.species = species.ROBOCAT;
+        this.species = Species.ROBOCAT;
     }
 
     @Override
