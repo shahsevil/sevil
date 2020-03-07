@@ -87,18 +87,28 @@ public class Family {
         }
     }
 
-    public boolean deleteChild(Human child) {
-        try {
-            Human[] childrenArr2 = Arrays.copyOf(childrenArr, childrenArr.length - 1);
-            for (int i = 0, j = 0; i < childrenArr2.length; i++) {
-                childrenArr2[j++] = childrenArr[i];
-            }
-            num--;
-            childrenArr = childrenArr2;
-            return true;
-        } catch (ArrayIndexOutOfBoundsException ex) {
-            return false;
+    private boolean contains(Human child) {
+        for (Human el : childrenArr) {
+            if (el.equals(child))
+                return true;
         }
+        return false;
+    }
+
+    public boolean deleteChild(Human child) {
+        boolean resultBool = contains(child);
+        if (resultBool) {
+            Human[] result = new Human[childrenArr.length - 1];
+            int count = 0;
+            for (Human el : childrenArr) {
+                if (!el.equals(child)) {
+                    result[count] = el;
+                    count++;
+                }
+            }
+            childrenArr = result;
+        }
+        return resultBool;
     }
 
     public int countFamily() {
