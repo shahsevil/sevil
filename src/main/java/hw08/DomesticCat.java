@@ -6,7 +6,7 @@ public class DomesticCat extends Pet {
 
     public DomesticCat(String nickname, int age, int trickLevel, Set<String> habits) {
         super(nickname, age, trickLevel, habits);
-        this.species = species.DOMESTICCAT;
+        this.species = Species.DOMESTICCAT;
     }
 
     @Override
