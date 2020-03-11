@@ -49,7 +49,7 @@ public class FamilyService {
     }
 
     public Family bornChild(Family family, String masculine, String feminine) {
-        int random = (int) (Math.random() + 1);
+        int random = (int) (Math.random() * 2);
         int iq = 0;
         int year = 0;
         if (random == 0) {
@@ -85,13 +85,13 @@ public class FamilyService {
 
     public Set<Pet> getPets(int index) {
         return familyDao.getFamilyByIndex(index).getPet();
-//        return familyDao.getAllFamilies().get(index).getPet();
     }
 
     public void addPet(int index, Pet pet) {
-//        familyDao.getFamilyByIndex(index).getPet().add(pet);
-//        familyDao.saveFamily(familyDao.getFamilyByIndex(index));
-        familyDao.getAllFamilies().get(index).getPet().add(pet);
+        List<Family> allFamilies = familyDao.getAllFamilies();
+        Family family = allFamilies.get(index);
+        Set<Pet> pet1 = family.getPet();
+        boolean add = pet1.add(pet);
         familyDao.saveFamily(familyDao.getAllFamilies().get(index));
     }
 }

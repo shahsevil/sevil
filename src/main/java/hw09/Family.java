@@ -1,9 +1,6 @@
 package hw09;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 public class Family {
     private Human mother;
@@ -16,9 +13,16 @@ public class Family {
         System.out.println("a new class is being loaded");
     }
 
+    public Family(Human mother, Human father, Set<Pet> petSet) {
+        this.mother = mother;
+        this.father = father;
+        this.petSet = petSet;
+    }
+
     public Family(Human mother, Human father) {
         this.mother = mother;
         this.father = father;
+        this.petSet = new HashSet<>();
     }
 
     public Family() {

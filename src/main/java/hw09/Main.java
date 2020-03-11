@@ -2,6 +2,8 @@ package hw09;
 
 import java.util.Collections;
 
+import static java.lang.System.out;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -24,19 +26,23 @@ public class Main {
         FamilyController familyController = new FamilyController();
 
         familyController.createNewFamily(mother2, father2);
-        familyController.adoptChild(family, boy);
-        familyController.adoptChild(family, girl);
-        familyController.bornChild(family, "Harry", "Sophia");
+        out.println(familyController.adoptChild(family, boy));
+        out.println(String.format("\n\nbornChild method:\n%s", familyController.bornChild(family, "Harry", "Sophia")));
+        out.print("\n");
         familyController.displayAllFamilies();
-        familyController.deleteFamilyByIndex(1);
+        out.print("\nFamily which has index equal to 1 is deleted...");
+        familyController.deleteFamilyByIndex(1);////
         familyController.deleteAllChildrenOlderThan(15);
-        familyController.count();
-        familyController.displayAllFamilies();
-
-        // exception??
+        out.printf("\n\nCount:%d\n%n", familyController.count());
+        out.print("Pets added:\n");
         familyController.addPet(0, myDog);
-//        familyController.addPet(0, myDomesticCat);
-//        familyController.addPet(0, myFish);
-//        familyController.addPet(0, myRoboCat);
+        familyController.addPet(0, myDomesticCat);
+        familyController.addPet(0, myFish);
+        familyController.addPet(0, myRoboCat);
+        familyController.displayAllFamilies();
+        out.printf("\n\nadoptChild method:%s\n", familyController.adoptChild(family, girl));
+        out.printf("countFamiliesWithMemberNumber method:\n%d", familyController.countFamiliesWithMemberNumber(2));
+        out.printf("\n\ngetFamiliesLessThan method(specified num is 6):\n %s", familyController.getFamiliesLessThan(6));
+        out.printf("\n\ngetFamiliesBiggerThan method(specified num is 0):\n %s\n", familyController.getFamiliesBiggerThan(0));
     }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Set;
 
 public class FamilyController {
+
     FamilyService familyService = new FamilyService();
 
     public List<Family> getAllFamilies() {

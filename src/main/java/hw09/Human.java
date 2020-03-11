@@ -9,20 +9,19 @@ public class Human {
     private String surname;
     private int year;
     private int iq;
-    private Map<DayOfWeek,String> schedule;
+    private Map<DayOfWeek, String> schedule;
     private Family family;
 
-    static
-    {
+    static {
         System.out.println("a new class is being loaded");
     }
 
-    public Human(String name, String surname, int year, int iq, Map<DayOfWeek,String > schedule) {
+    public Human(String name, String surname, int year, int iq, Map<DayOfWeek, String> schedule) {
         this.name = name;
         this.surname = surname;
         this.year = year;
         this.iq = iq;
-        this.schedule=schedule;
+        this.schedule = schedule;
     }
 
     public Human(String name, String surname, int year, int iq) {
@@ -64,11 +63,11 @@ public class Human {
         this.iq = iq;
     }
 
-    public Map<DayOfWeek,String> getSchedule() {
+    public Map<DayOfWeek, String> getSchedule() {
         return schedule;
     }
 
-    public void setSchedule(Map<DayOfWeek,String> schedule) {
+    public void setSchedule(Map<DayOfWeek, String> schedule) {
         this.schedule = schedule;
     }
 
@@ -105,6 +104,6 @@ public class Human {
 
     @Override
     public String toString() {
-        return String.format("Human{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n schedule=%s}",name,surname,year,iq,schedule);
+        return String.format("Human{name='%s',\n surname='%s',\n year=%d,\n iq=%d,\n}", name, surname, year, iq);
     }
 }
