@@ -1,5 +1,8 @@
 package hw09;
 
+import hw09.Classes.*;
+import hw09.Controller.FamilyController;
+import hw09.Service.FamilyService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

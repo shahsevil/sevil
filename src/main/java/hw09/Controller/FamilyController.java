@@ -1,4 +1,9 @@
-package hw09;
+package hw09.Controller;
+
+import hw09.Classes.Family;
+import hw09.Classes.Human;
+import hw09.Classes.Pet;
+import hw09.Service.FamilyService;
 
 import java.util.List;
 import java.util.Set;

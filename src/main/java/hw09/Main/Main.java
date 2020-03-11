@@ -1,4 +1,7 @@
-package hw09;
+package hw09.Main;
+
+import hw09.Classes.*;
+import hw09.Controller.FamilyController;
 
 import java.util.Collections;
 

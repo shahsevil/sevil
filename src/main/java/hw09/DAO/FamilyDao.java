@@ -1,4 +1,6 @@
-package hw09;
+package hw09.DAO;
+
+import hw09.Classes.Family;
 
 import java.util.List;
 

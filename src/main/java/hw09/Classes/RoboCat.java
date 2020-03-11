@@ -1,4 +1,6 @@
-package hw09;
+package hw09.Classes;
+
+import hw09.Enums.Species;
 
 import java.util.Set;
 

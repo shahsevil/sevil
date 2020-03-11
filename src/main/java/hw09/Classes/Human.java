@@ -1,4 +1,6 @@
-package hw09;
+package hw09.Classes;
+
+import hw09.Enums.DayOfWeek;
 
 import java.util.Map;
 import java.util.Objects;

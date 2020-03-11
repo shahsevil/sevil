@@ -1,4 +1,7 @@
-package hw09;
+package hw09.Collection;
+
+import hw09.Classes.Family;
+import hw09.DAO.FamilyDao;
 
 import java.util.ArrayList;
 import java.util.List;

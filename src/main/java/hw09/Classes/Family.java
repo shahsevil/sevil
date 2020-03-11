@@ -1,4 +1,4 @@
-package hw09;
+package hw09.Classes;
 
 import java.util.*;
 
