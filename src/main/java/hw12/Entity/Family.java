@@ -109,6 +109,6 @@ public class Family {
 
     @Override
     public String toString() {
-        return String.format("Family{\n\tmother=%s, \n\tfather=%s, \n\tpetSet=%s, \n\tchildrenList=%s, \ncountFam=%d}\n", mother, father, petSet, prettyFormat(childrenList), num);
+        return String.format("Family{\n\tmother=%s, \n\tfather=%s, \n\tpetSet=%s, \n\tchildrenList=%s, \ncountFam=%d}\n", mother, father, petSet, prettyFormat(childrenList), countFamily());
     }
 }
