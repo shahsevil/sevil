@@ -135,7 +135,7 @@ public class Main {
                     break;
                 case "11":
                     try {
-                        familyController.loadData(saveAndLoad.load());
+                        saveAndLoad.load();
                     } catch (NullPointerException ex) {
                         consoleMain.printLn("No data found..");
                     }

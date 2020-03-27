@@ -54,4 +54,6 @@ public class CollectionFamilyDao implements FamilyDao {
     public void loadData(List<Family> families) {
         familyList.addAll(families);
     }
+
+
 }

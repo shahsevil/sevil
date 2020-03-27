@@ -119,7 +119,8 @@ public class FamilyService {
                 .toString();
     }
 
-    public void loadData(List<Family> families) {
+    public List<Family> loadData(List<Family> families) {
         familyDao.loadData(families);
+        return families;
     }
 }

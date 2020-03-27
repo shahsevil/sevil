@@ -77,7 +77,7 @@ public class FamilyController {
         familyService.deleteAllChildrenOlderThan(age);
     }
 
-    public void loadData(List<Family> families) {
-        familyService.loadData(families);
+    public List<Family> loadData(List<Family> families) {
+        return familyService.loadData(families);
     }
 }
