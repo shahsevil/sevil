@@ -16,10 +16,13 @@ public class FamilyService {
         return familyDao.getAllFamilies();
     }
 
-    public void displayAllFamilies() {
-        for (Family family : familyDao.getAllFamilies()) {
-            System.out.printf("%d ->\n %s", getAllFamilies().indexOf(family), family);
+    public StringBuffer displayAllFamilies() {
+        StringBuffer stringBuffer = new StringBuffer();
+        for (Family family :familyDao.getAllFamilies()){
+            stringBuffer.append(family);
+            stringBuffer.append("\n");
         }
+        return stringBuffer;
     }
 
     public List<Family> getFamiliesBiggerThan(int specified) {
@@ -27,7 +30,6 @@ public class FamilyService {
         familyDao.getAllFamilies().forEach(family -> {
             if (family.countFamily() > specified) fbt.add(family);
         });
-        System.out.println(fbt);
         return fbt;
     }
 
@@ -36,7 +38,6 @@ public class FamilyService {
         familyDao.getAllFamilies().forEach(family -> {
             if (family.countFamily() < specified) flt.add(family);
         });
-        System.out.println(flt);
         return flt;
     }
 
@@ -73,10 +74,7 @@ public class FamilyService {
     }
 
     public void deleteAllChildrenOlderThan(int age) {
-        for (Family family : familyDao.getAllFamilies()) {
-            family.getChildren().removeIf(human -> (2020 - human.getYear()) > age);
-            familyDao.saveFamily(family);
-        }
+        familyDao.getAllFamilies().forEach(family->family.getChildren().removeIf(human->(2020-human.getYear())>age) );
     }
 
     public int count() {
@@ -97,5 +95,9 @@ public class FamilyService {
         Set<Pet> pet1 = family.getPet();
         boolean add = pet1.add(pet);
         familyDao.saveFamily(familyDao.getAllFamilies().get(index));
+    }
+
+    public Family saveFamily(Family family) {
+        return familyDao.saveFamily(family);
     }
 }

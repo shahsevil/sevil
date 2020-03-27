@@ -16,8 +16,8 @@ public class FamilyController {
         return familyService.getAllFamilies();
     }
 
-    public void displayAllFamilies() {
-        familyService.displayAllFamilies();
+    public StringBuffer displayAllFamilies() {
+        return familyService.displayAllFamilies();
     }
 
     public List<Family> getFamiliesBiggerThan(int specified) {
@@ -66,5 +66,9 @@ public class FamilyController {
 
     public void addPet(int index, Pet pet) {
         familyService.addPet(index, pet);
+    }
+
+    public void saveFamily(Family family){
+        familyService.saveFamily(family);
     }
 }

@@ -32,9 +32,9 @@ public class Main {
         out.println(familyController.adoptChild(family, boy));
         out.println(String.format("\n\nbornChild method:\n%s", familyController.bornChild(family, "Harry", "Sophia")));
         out.print("\n");
-        familyController.displayAllFamilies();
+        out.print(familyController.displayAllFamilies());
         out.print("\nFamily which has index equal to 1 is deleted...");
-        familyController.deleteFamilyByIndex(1);////
+        familyController.deleteFamilyByIndex(1);
         familyController.deleteAllChildrenOlderThan(15);
         out.printf("\n\nCount:%d\n%n", familyController.count());
         out.print("Pets added:\n");
