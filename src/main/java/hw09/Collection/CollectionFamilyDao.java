@@ -47,6 +47,7 @@ public class CollectionFamilyDao implements FamilyDao {
     @Override
     public Family saveFamily(Family family) {
         if (!familyList.contains(family)) familyList.add(family);
+        else familyList.set(familyList.indexOf(family),family);
         return family;
     }
 }
